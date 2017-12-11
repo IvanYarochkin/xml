@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.example.com/Flowers"
+        xmlns:tns="http://www.example.com/Flowers">
+
+    <element name="Flowers">
+        <complexType>
+            <sequence>
+                <element name="flowers" type="tns:Flower" minOccurs="5" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="Flower">
+        <sequence>
+            <element name="name" type="tns:Name"/>
+            <element name="origin" type="tns:Origin"/>
+            <element name="visual-parameters" type="tns:VisualParameters"/>
+            <element name="multiplying" type="tns:Multiplying"/>
+        </sequence>
+        <attribute name="id" type="ID" use="required" default="1"/>
+    </complexType>
+    
+    <complexType name="CutFlowers">
+        <complexContent>
+            <extension base="tns:Flower">
+                <attribute name="freshness" default="0">
+                    <simpleType>
+                        <restriction>
+                            <pattern value="\d{1,2}0?"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="GardenFlower">
+        <complexContent>
+            <extension base="tns:Flower">
+                <sequence>
+                    <element name="growing-tips" type="tns:GrowingTips"/>
+                </sequence>
+                <attribute name="soil" use="optional" default="unpaved">
+                    <simpleType>
+                        <restriction base="string">
+                            <enumeration value="podzolic"/>
+                            <enumeration value="unpaved"/>
+                            <enumeration value="sod-podzolic"/>
+                        </restriction>
+                    </simpleType>
+                </attribute>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="VisualParameters">
+        <sequence>
+            <element name="stem-color" type="tns:Color"/>
+            <element name="leaf-color" type="tns:Color"/>
+            <element name="flower-height" type="tns:FlowerHeight"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="GrowingTips">
+        <sequence>
+            <element name="temperature" type="tns:Temperature"/>
+            <element name="lighting" type="boolean"/>
+            <element name="watering" type="tns:Watering"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="Name">
+        <restriction>
+            <pattern value="\w{4,15}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Origin">
+        <restriction>
+            <pattern value="\w{4}(\w|\d){0,20}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Multiplying">
+        <restriction>
+            <enumeration value="leaf"/>
+            <enumeration value="stalk"/>
+            <enumeration value="seed"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="FlowerHeight">
+        <restriction>
+            <pattern value="\d{1,5}(.\d{1,3})?"
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Color">
+        <restriction>
+            <pattern value="\w{3,12}"/>
+        </restriction>
+    </simpleType>
+    
+    <simpleType name="Temperature">
+        <restriction base="double">
+            <pattern value="\d{1,3}(.\d{1,3})?"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="Watering">
+        <restriction>
+            <pattern value="\d{1,4}(.\d{1,4})?"/>
+        </restriction>
+    </simpleType>
+</schema>
