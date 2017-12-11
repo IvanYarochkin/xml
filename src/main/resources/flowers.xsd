@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema"
-        targetNamespace="http://www.example.com/Flowers"
-        xmlns:tns="http://www.example.com/Flowers">
-
-    <element name="Flowers" type="tns:Flower" abstract="true"/>
-    <element name="CutFlowers" type="tns:CutFlowers" substitutionGroup="tns:Flowers"/>
-    <element name="GardenFlowers" type="tns:GardenFlowers" substitutionGroup="tns:Flowers"/>
+<schema version="1.0"
+        xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://www.dei.isep.ipp.pt/Flowers"
+        xmlns:tns="http://www.dei.isep.ipp.pt/Flowers"
+        elementFormDefault="qualified">
+    
+    <element name="Flowers">
+        <complexType>
+            <sequence>
+                <element ref="tns:flowers" minOccurs="2" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+    <element name="flowers" type="tns:Flower" abstract="true"/>
+    <element name="cut-Flowers" type="tns:CutFlowers" substitutionGroup="tns:flowers"/>
+    <element name="garden-Flowers" type="tns:GardenFlowers" substitutionGroup="tns:flowers"/>
 
     <complexType name="Flower">
         <sequence>
@@ -22,7 +31,7 @@
             <extension base="tns:Flower">
                 <attribute name="freshness" default="0">
                     <simpleType>
-                        <restriction>
+                        <restriction base="positiveInteger">
                             <pattern value="\d{1,2}0?"/>
                         </restriction>
                     </simpleType>
@@ -67,14 +76,14 @@
     </complexType>
 
     <simpleType name="Name">
-        <restriction>
-            <pattern value="\w{4,15}"/>
+        <restriction base="string">
+            <pattern value="\w{3,15}"/>
         </restriction>
     </simpleType>
 
     <simpleType name="Origin">
-        <restriction>
-            <pattern value="\w{4}(\w|\d){0,20}"/>
+        <restriction base="string">
+            <pattern value="\w{3}(\w|\d){0,20}"/>
         </restriction>
     </simpleType>
 
@@ -87,13 +96,13 @@
     </simpleType>
 
     <simpleType name="FlowerHeight">
-        <restriction>
-            <pattern value="\d{1,5}(.\d{1,3})?"
+        <restriction base="double">
+            <pattern value="\d{1,5}(.\d{1,3})?"/>
         </restriction>
     </simpleType>
 
     <simpleType name="Color">
-        <restriction>
+        <restriction base="string">
             <pattern value="\w{3,12}"/>
         </restriction>
     </simpleType>
@@ -105,7 +114,7 @@
     </simpleType>
 
     <simpleType name="Watering">
-        <restriction>
+        <restriction base="double">
             <pattern value="\d{1,4}(.\d{1,4})?"/>
         </restriction>
     </simpleType>
