@@ -4,32 +4,32 @@
         targetNamespace="http://www.dei.isep.ipp.pt/Flowers"
         xmlns:tns="http://www.dei.isep.ipp.pt/Flowers"
         elementFormDefault="qualified">
-    
-    <element name="Flowers">
+
+    <element name="flowers">
         <complexType>
             <sequence>
-                <element ref="tns:flowers" minOccurs="2" maxOccurs="unbounded"/>
+                <element ref="tns:flower" minOccurs="2" maxOccurs="unbounded"/>
             </sequence>
         </complexType>
     </element>
-    <element name="flowers" type="tns:Flower" abstract="true"/>
-    <element name="cut-Flowers" type="tns:CutFlowers" substitutionGroup="tns:flowers"/>
-    <element name="garden-Flowers" type="tns:GardenFlowers" substitutionGroup="tns:flowers"/>
+    <element name="flower" type="tns:flower" abstract="true"/>
+    <element name="cut-flower" type="tns:cut-flower" substitutionGroup="tns:flower"/>
+    <element name="garden-flower" type="tns:garden-flower" substitutionGroup="tns:flower"/>
 
-    <complexType name="Flower">
+    <complexType name="flower">
         <sequence>
-            <element name="name" type="tns:Name"/>
-            <element name="origin" type="tns:Origin"/>
-            <element name="visual-parameters" type="tns:VisualParameters"/>
-            <element name="multiplying" type="tns:Multiplying"/>
+            <element name="name" type="tns:name"/>
+            <element name="origin" type="tns:origin"/>
+            <element name="visual-parameters" type="tns:visual-parameters"/>
+            <element name="multiplying" type="tns:multiplying"/>
         </sequence>
-        <attribute name="id" type="ID" use="required" default="1"/>
+        <attribute name="id" type="ID" use="optional"/>
     </complexType>
 
-    <complexType name="CutFlowers">
+    <complexType name="cut-flower">
         <complexContent>
-            <extension base="tns:Flower">
-                <attribute name="freshness" default="0">
+            <extension base="tns:flower">
+                <attribute name="freshness" default="100">
                     <simpleType>
                         <restriction base="positiveInteger">
                             <pattern value="\d{1,2}0?"/>
@@ -40,11 +40,11 @@
         </complexContent>
     </complexType>
 
-    <complexType name="GardenFlowers">
+    <complexType name="garden-flower">
         <complexContent>
-            <extension base="tns:Flower">
+            <extension base="tns:flower">
                 <sequence>
-                    <element name="growing-tips" type="tns:GrowingTips"/>
+                    <element name="growing-tips" type="tns:growing-tips"/>
                 </sequence>
                 <attribute name="soil" use="optional" default="unpaved">
                     <simpleType>
@@ -59,61 +59,61 @@
         </complexContent>
     </complexType>
 
-    <complexType name="VisualParameters">
+    <complexType name="visual-parameters">
         <sequence>
-            <element name="stem-color" type="tns:Color"/>
-            <element name="leaf-color" type="tns:Color"/>
-            <element name="flower-height" type="tns:FlowerHeight"/>
+            <element name="stem-color" type="tns:color"/>
+            <element name="leaf-color" type="tns:color"/>
+            <element name="flower-height" type="tns:flower-height"/>
         </sequence>
     </complexType>
 
-    <complexType name="GrowingTips">
+    <complexType name="growing-tips">
         <sequence>
-            <element name="temperature" type="tns:Temperature"/>
+            <element name="temperature" type="tns:temperature"/>
             <element name="lighting" type="boolean"/>
-            <element name="watering" type="tns:Watering"/>
+            <element name="watering" type="tns:watering"/>
         </sequence>
     </complexType>
 
-    <simpleType name="Name">
+    <simpleType name="name">
         <restriction base="string">
             <pattern value="\w{3,15}"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="Origin">
+    <simpleType name="origin">
         <restriction base="string">
             <pattern value="\w{3}(\w|\d){0,20}"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="Multiplying">
-        <restriction>
+    <simpleType name="multiplying">
+        <restriction base="string">
             <enumeration value="leaf"/>
             <enumeration value="stalk"/>
             <enumeration value="seed"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="FlowerHeight">
+    <simpleType name="flower-height">
         <restriction base="double">
             <pattern value="\d{1,5}(.\d{1,3})?"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="Color">
+    <simpleType name="color">
         <restriction base="string">
             <pattern value="\w{3,12}"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="Temperature">
+    <simpleType name="temperature">
         <restriction base="double">
             <pattern value="\d{1,3}(.\d{1,3})?"/>
         </restriction>
     </simpleType>
 
-    <simpleType name="Watering">
+    <simpleType name="watering">
         <restriction base="double">
             <pattern value="\d{1,4}(.\d{1,4})?"/>
         </restriction>

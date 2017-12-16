@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<Flowers xmlns="http://www.dei.isep.ipp.pt/Flowers">
-    <cut-Flowers id="ID-1" freshness="70">
+<flowers xmlns="http://www.dei.isep.ipp.pt/Flowers">
+    <cut-flower id="ID-1" freshness="70">
         <name>rose</name>
         <origin>Belarus</origin>
         <visual-parameters>
@@ -10,9 +10,9 @@
             <flower-height>30</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
+    </cut-flower>
 
-    <garden-Flowers id="ID-2" soil="unpaved">
+    <garden-flower id="ID-2" soil="unpaved">
         <name>chrysanthemum</name>
         <origin>Germany</origin>
         <visual-parameters>
@@ -26,9 +26,9 @@
             <lighting>true</lighting>
             <watering>300</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <garden-Flowers id="ID-3" soil="podzolic">
+    <garden-flower id="ID-3" soil="podzolic">
         <name>rose</name>
         <origin>Russia</origin>
         <visual-parameters>
@@ -42,9 +42,9 @@
             <lighting>true</lighting>
             <watering>350</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <garden-Flowers id="ID-4" soil="sod-podzolic">
+    <garden-flower id="ID-4" soil="sod-podzolic">
         <name>orchid</name>
         <origin>Belarus</origin>
         <visual-parameters>
@@ -58,9 +58,9 @@
             <lighting>true</lighting>
             <watering>274.5</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <garden-Flowers id="ID-5" soil="sod-podzolic">
+    <garden-flower id="ID-5" soil="sod-podzolic">
         <name>orchid</name>
         <origin>USA</origin>
         <visual-parameters>
@@ -74,9 +74,9 @@
             <lighting>true</lighting>
             <watering>284.5</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <cut-Flowers id="ID-6">
+    <cut-flower id="ID-6">
         <name>rose</name>
         <origin>Russia</origin>
         <visual-parameters>
@@ -85,9 +85,9 @@
             <flower-height>100</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
+    </cut-flower>
 
-    <garden-Flowers id="ID-7" soil="unpaved">
+    <garden-flower id="ID-7" soil="unpaved">
         <name>gladiolus</name>
         <origin>Belgium</origin>
         <visual-parameters>
@@ -101,9 +101,9 @@
             <lighting>true</lighting>
             <watering>230</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <garden-Flowers id="ID-8" soil="unpaved">
+    <garden-flower id="ID-8" soil="unpaved">
         <name>gladiolus</name>
         <origin>Germany</origin>
         <visual-parameters>
@@ -117,9 +117,9 @@
             <lighting>true</lighting>
             <watering>250</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <garden-Flowers id="ID-9" soil="sod-podzolic">
+    <garden-flower id="ID-9" soil="sod-podzolic">
         <name>orchid</name>
         <origin>Belarus</origin>
         <visual-parameters>
@@ -133,9 +133,9 @@
             <lighting>true</lighting>
             <watering>290</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <garden-Flowers id="ID-10" soil="unpaved">
+    <garden-flower id="ID-10" soil="unpaved">
         <name>chrysanthemum</name>
         <origin>Russia</origin>
         <visual-parameters>
@@ -149,9 +149,9 @@
             <lighting>true</lighting>
             <watering>315.3</watering>
         </growing-tips>
-    </garden-Flowers>
+    </garden-flower>
 
-    <cut-Flowers id="ID-11" freshness="95">
+    <cut-flower id="ID-11" freshness="95">
         <name>tulip</name>
         <origin>Canada</origin>
         <visual-parameters>
@@ -160,9 +160,9 @@
             <flower-height>65</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
+    </cut-flower>
 
-    <cut-Flowers id="ID-12" freshness="76">
+    <cut-flower id="ID-12" freshness="76">
         <name>tulip</name>
         <origin>USA</origin>
         <visual-parameters>
@@ -171,9 +171,9 @@
             <flower-height>70</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
+    </cut-flower>
 
-    <garden-Flowers id="ID-13" soil="unpaved">
+    <garden-flower id="ID-13" soil="unpaved">
         <name>gladiolus</name>
         <origin>Ukraine</origin>
         <visual-parameters>
@@ -187,9 +187,9 @@
             <lighting>true</lighting>
             <watering>263.4</watering>
         </growing-tips>
-    </garden-Flowers>
-    
-    <cut-Flowers id="ID-14" freshness="74">
+    </garden-flower>
+
+    <cut-flower id="ID-14" freshness="74">
         <name>lily</name>
         <origin>Canada</origin>
         <visual-parameters>
@@ -198,9 +198,9 @@
             <flower-height>48</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
+    </cut-flower>
 
-    <cut-Flowers id="ID-15" freshness="36">
+    <cut-flower id="ID-15" freshness="36">
         <name>iris</name>
         <origin>Belarus</origin>
         <visual-parameters>
@@ -209,9 +209,9 @@
             <flower-height>30</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
+    </cut-flower>
 
-    <cut-Flowers id="ID-16" freshness="54">
+    <cut-flower id="ID-16" freshness="54">
         <name>iris</name>
         <origin>USA</origin>
         <visual-parameters>
@@ -220,6 +220,6 @@
             <flower-height>35</flower-height>
         </visual-parameters>
         <multiplying>seed</multiplying>
-    </cut-Flowers>
-</Flowers>
+    </cut-flower>
+</flowers>
 
