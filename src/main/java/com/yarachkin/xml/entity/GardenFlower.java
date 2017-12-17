@@ -12,7 +12,7 @@ public class GardenFlower extends Flower {
     @XmlElement(name = "growing-tips", required = true)
     private GrowingTips growingTips;
     @XmlAttribute(name = "soil")
-    private String soil;
+    private String soil = "unpaved";
 
     public GardenFlower() {
         growingTips = new GrowingTips();

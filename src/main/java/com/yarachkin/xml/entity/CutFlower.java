@@ -10,7 +10,7 @@ import javax.xml.bind.annotation.XmlType;
 public class CutFlower extends Flower {
 
     @XmlAttribute(name = "freshness")
-    private int freshness = 100;
+    private int freshness;
 
     public CutFlower() {
     }

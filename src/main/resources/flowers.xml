@@ -87,7 +87,7 @@
         <multiplying>seed</multiplying>
     </cut-flower>
 
-    <garden-flower id="ID-7" soil="unpaved">
+    <garden-flower id="ID-7">
         <name>gladiolus</name>
         <origin>Belgium</origin>
         <visual-parameters>

@@ -29,9 +29,9 @@
     <complexType name="cut-flower">
         <complexContent>
             <extension base="tns:flower">
-                <attribute name="freshness" default="100">
+                <attribute name="freshness" default="0">
                     <simpleType>
-                        <restriction base="positiveInteger">
+                        <restriction base="nonNegativeInteger">
                             <pattern value="\d{1,2}0?"/>
                         </restriction>
                     </simpleType>
