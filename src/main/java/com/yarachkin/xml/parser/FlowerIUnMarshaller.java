@@ -1,4 +1,4 @@
-package com.yarachkin.xml.marshal;
+package com.yarachkin.xml.parser;
 
 import com.yarachkin.xml.entity.Flowers;
 import com.yarachkin.xml.exception.XmlParserException;
@@ -12,7 +12,7 @@ import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 import java.io.File;
 
-public class FlowerIUnMarshalMain {
+public class FlowerIUnMarshaller {
 
     public Flowers unMarshal(String xmlPath, String xsdPath) throws XmlParserException {
         try {
