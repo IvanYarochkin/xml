@@ -14,6 +14,10 @@ public class GardenFlower extends Flower {
     @XmlAttribute(name = "soil")
     private String soil;
 
+    public GardenFlower() {
+        growingTips = new GrowingTips();
+    }
+
     public GrowingTips getGrowingTips() {
         return growingTips;
     }

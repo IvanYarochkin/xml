@@ -35,4 +35,13 @@ public class GrowingTips {
     public void setWatering(double value) {
         this.watering = value;
     }
+
+    @Override
+    public String toString() {
+        return "GrowingTips{" +
+                "temperature=" + temperature +
+                ", lighting=" + lighting +
+                ", watering=" + watering +
+                '}';
+    }
 }

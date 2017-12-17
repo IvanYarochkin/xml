@@ -11,17 +11,13 @@ import java.math.BigInteger;
 public class CutFlower extends Flower {
 
     @XmlAttribute(name = "freshness")
-    private BigInteger freshness;
+    private int freshness = 100;
 
-    public BigInteger getFreshness() {
-        if ( freshness == null ) {
-            return new BigInteger("100");
-        } else {
-            return freshness;
-        }
+    public int getFreshness() {
+        return freshness;
     }
 
-    public void setFreshness(BigInteger value) {
+    public void setFreshness(int value) {
         this.freshness = value;
     }
 

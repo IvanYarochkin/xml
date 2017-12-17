@@ -38,4 +38,13 @@ public class VisualParameters {
     public void setFlowerHeight(double value) {
         this.flowerHeight = value;
     }
+
+    @Override
+    public String toString() {
+        return "VisualParameters{" +
+                "stemColor='" + stemColor + '\'' +
+                ", leafColor='" + leafColor + '\'' +
+                ", flowerHeight=" + flowerHeight +
+                '}';
+    }
 }

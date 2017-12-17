@@ -12,16 +12,8 @@ import javax.xml.bind.annotation.adapters.CollapsedStringAdapter;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "flower", propOrder = {
-        "name",
-        "origin",
-        "visualParameters",
-        "multiplying"
-})
-@XmlSeeAlso({
-        CutFlower.class,
-        GardenFlower.class
-})
+@XmlType(name = "flower", propOrder = {"name", "origin", "visualParameters", "multiplying"})
+@XmlSeeAlso({CutFlower.class, GardenFlower.class})
 public class Flower {
 
     @XmlElement(required = true)
@@ -38,6 +30,10 @@ public class Flower {
     @XmlID
     @XmlSchemaType(name = "ID")
     private String id;
+
+    public Flower() {
+        visualParameters = new VisualParameters();
+    }
 
     public String getName() {
         return name;
