@@ -13,12 +13,36 @@ public class CutFlower extends Flower {
     @XmlAttribute(name = "freshness")
     private int freshness = 100;
 
+    public CutFlower() {
+    }
+
+    public CutFlower(String name, String origin, VisualParameters visualParameters,
+                     Multiplying multiplying, String id, int freshness) {
+        super(name, origin, visualParameters, multiplying, id);
+        this.freshness = freshness;
+    }
+
     public int getFreshness() {
         return freshness;
     }
 
     public void setFreshness(int value) {
         this.freshness = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) return true;
+        if ( !(o instanceof CutFlower) ) return false;
+
+        CutFlower cutFlower = (CutFlower) o;
+
+        return freshness == cutFlower.freshness;
+    }
+
+    @Override
+    public int hashCode() {
+        return freshness;
     }
 
     @Override

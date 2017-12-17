@@ -15,6 +15,15 @@ public class VisualParameters {
     @XmlElement(name = "flower-height")
     private double flowerHeight;
 
+    public VisualParameters () {
+    }
+
+    public VisualParameters(String stemColor, String leafColor, double flowerHeight) {
+        this.stemColor = stemColor;
+        this.leafColor = leafColor;
+        this.flowerHeight = flowerHeight;
+    }
+
     public String getStemColor() {
         return stemColor;
     }
@@ -37,6 +46,29 @@ public class VisualParameters {
 
     public void setFlowerHeight(double value) {
         this.flowerHeight = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) return true;
+        if ( !(o instanceof VisualParameters) ) return false;
+
+        VisualParameters that = (VisualParameters) o;
+
+        if ( Double.compare(that.flowerHeight, flowerHeight) != 0 ) return false;
+        if ( stemColor != null ? !stemColor.equals(that.stemColor) : that.stemColor != null ) return false;
+        return leafColor != null ? leafColor.equals(that.leafColor) : that.leafColor == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = stemColor != null ? stemColor.hashCode() : 0;
+        result = 31 * result + (leafColor != null ? leafColor.hashCode() : 0);
+        temp = Double.doubleToLongBits(flowerHeight);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
     }
 
     @Override

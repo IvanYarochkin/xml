@@ -18,6 +18,13 @@ public class GardenFlower extends Flower {
         growingTips = new GrowingTips();
     }
 
+    public GardenFlower(String name, String origin, VisualParameters visualParameters, Multiplying multiplying,
+                        String id, GrowingTips growingTips, String soil) {
+        super(name, origin, visualParameters, multiplying, id);
+        this.growingTips = growingTips;
+        this.soil = soil;
+    }
+
     public GrowingTips getGrowingTips() {
         return growingTips;
     }
@@ -36,6 +43,24 @@ public class GardenFlower extends Flower {
 
     public void setSoil(String value) {
         this.soil = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) return true;
+        if ( !(o instanceof GardenFlower) ) return false;
+
+        GardenFlower that = (GardenFlower) o;
+
+        if ( growingTips != null ? !growingTips.equals(that.growingTips) : that.growingTips != null ) return false;
+        return soil != null ? soil.equals(that.soil) : that.soil == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = growingTips != null ? growingTips.hashCode() : 0;
+        result = 31 * result + (soil != null ? soil.hashCode() : 0);
+        return result;
     }
 
     @Override

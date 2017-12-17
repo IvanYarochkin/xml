@@ -35,6 +35,14 @@ public class Flower {
         visualParameters = new VisualParameters();
     }
 
+    public Flower(String name, String origin, VisualParameters visualParameters, Multiplying multiplying, String id) {
+        this.name = name;
+        this.origin = origin;
+        this.visualParameters = visualParameters;
+        this.multiplying = multiplying;
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -73,6 +81,31 @@ public class Flower {
 
     public void setId(String value) {
         this.id = value;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if ( this == o ) return true;
+        if ( !(o instanceof Flower) ) return false;
+
+        Flower flower = (Flower) o;
+
+        if ( name != null ? !name.equals(flower.name) : flower.name != null ) return false;
+        if ( origin != null ? !origin.equals(flower.origin) : flower.origin != null ) return false;
+        if ( visualParameters != null ? !visualParameters.equals(flower.visualParameters) : flower.visualParameters != null )
+            return false;
+        if ( multiplying != flower.multiplying ) return false;
+        return id != null ? id.equals(flower.id) : flower.id == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (origin != null ? origin.hashCode() : 0);
+        result = 31 * result + (visualParameters != null ? visualParameters.hashCode() : 0);
+        result = 31 * result + (multiplying != null ? multiplying.hashCode() : 0);
+        result = 31 * result + (id != null ? id.hashCode() : 0);
+        return result;
     }
 
     @Override
