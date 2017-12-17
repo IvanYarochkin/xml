@@ -4,7 +4,7 @@ import com.yarachkin.xml.exception.XmlParserException;
 
 public enum FlowerEnum {
     FLOWERS("flowers"),
-    CUT_FLOWERS("cut-flowers"),
+    CUT_FLOWERS("cut-flower"),
     GARDEN_FLOWER("garden-flower"),
     VISUAL_PARAMETERS("visual-parameters"),
     GROWING_TIPS("growing-tips"),
