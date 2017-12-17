@@ -15,7 +15,7 @@ public class VisualParameters {
     @XmlElement(name = "flower-height")
     private double flowerHeight;
 
-    public VisualParameters () {
+    public VisualParameters() {
     }
 
     public VisualParameters(String stemColor, String leafColor, double flowerHeight) {

@@ -14,6 +14,7 @@
         <maven-resources-plugin.version>3.0.2</maven-resources-plugin.version>
         <directory-maven-plugin.version>0.2</directory-maven-plugin.version>
         <testng.version>6.11</testng.version>
+        <xerces.impl>2.9.1</xerces.impl>
     </properties>
 
     <dependencies>
@@ -34,6 +35,12 @@
             <artifactId>testng</artifactId>
             <version>${testng.version}</version>
             <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>xerces</groupId>
+            <artifactId>xercesImpl</artifactId>
+            <version>${xerces.impl}</version>
         </dependency>
     </dependencies>
 
